@@ -18,7 +18,7 @@ for(var i=0;i<nums.length;i++){
 
 function showNum(){
    
-    if(screen.innerHTML==='0.00'){
+    if(screen.innerHTML==='0.00' ){
         screen.innerHTML = this.innerHTML
     }else{
         screen.innerHTML+=this.innerHTML
@@ -40,12 +40,45 @@ function clearIt(){
 const addBut = document.getElementById('add');
 addBut.addEventListener('click',addIt)
 function addIt(){
-  mem.push(Number(screen.innerHTML))
-  mem.push('+')
-  console.log(mem)
+  mem.push(Number(screen.innerHTML));
+  mem.push('+');
+  console.log(mem);
   screen.innerHTML='0.00';  
 
 }
+
+
+//subtract
+const subtractBut = document.getElementById('minus')
+subtractBut.addEventListener('click',minusIt);
+function minusIt(){
+    mem.push(Number(screen.innerHTML));
+    mem.push('-');
+    console.log(mem);
+    screen.innerHTML='0.00'
+}
+
+//multiply
+const multiply = document.getElementById('multiply');
+multiply.addEventListener('click',multiplyIt);
+function multiplyIt(){
+    mem.push(Number(screen.innerHTML));
+    mem.push('x');
+    console.log(mem);
+    screen.innerHTML='0.00';
+
+}
+
+//divide
+const divide = document.getElementById('divide');
+divide.addEventListener('click',divideIt);
+function divideIt(){
+    mem.push(Number(screen.innerHTML));
+    mem.push('÷');
+    console.log(mem);
+    screen.innerHTML='0.00'
+}
+
 
 
 //equals
@@ -59,7 +92,7 @@ function runEm(){
     console.log(mem)
     if(typeof mem[0]==='number'){
         placeHold = mem[0];
-        console.log('placehold '+ placeHold)
+        console.log(placeHold)
     }else{
         throw error
     }
@@ -68,10 +101,22 @@ function runEm(){
        if(mem[i]==="+"){
            placeHold+=mem[i+1]
            console.log(placeHold)
+       }else if(mem[i]==="-"){
+           placeHold-=mem[i+1]
+           console.log(placeHold)
+       }else if(mem[i]==='x'){
+           placeHold*=mem[i+1]
+           console.log(placeHold)
+       }else if(mem[i]==='÷'){
+           placeHold/=mem[i+1]
+           console.log(placeHold)
        }
 
         
     }
+    screen.innerHTML=placeHold;
+    mem=[];
+    placeHold=0;
 
 }
 
