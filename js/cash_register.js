@@ -2,7 +2,7 @@ const myCalc = calculatorModule();
 var mem = myCalc.memory
 const tot = myCalc.total
 var optArr=[];
-
+var balance = 100;
 
 
 
@@ -18,7 +18,8 @@ for(var i=0;i<nums.length;i++){
 
 function showNum(){
    
-    if(screen.innerHTML==='0.00' ){
+    if(screen.innerHTML==='0.00' || screen.innerHTML==='+' || screen.innerHTML==='-' || screen.innerHTML==='x' || screen.innerHTML==='÷'||
+    screen.innerHTML.charAt(0)==='T'){
         screen.innerHTML = this.innerHTML
     }else{
         screen.innerHTML+=this.innerHTML
@@ -43,7 +44,7 @@ function addIt(){
   mem.push(Number(screen.innerHTML));
   mem.push('+');
   console.log(mem);
-  screen.innerHTML='0.00';  
+  screen.innerHTML='+';  
 
 }
 
@@ -55,7 +56,7 @@ function minusIt(){
     mem.push(Number(screen.innerHTML));
     mem.push('-');
     console.log(mem);
-    screen.innerHTML='0.00'
+    screen.innerHTML='-'
 }
 
 //multiply
@@ -65,7 +66,7 @@ function multiplyIt(){
     mem.push(Number(screen.innerHTML));
     mem.push('x');
     console.log(mem);
-    screen.innerHTML='0.00';
+    screen.innerHTML='x';
 
 }
 
@@ -76,7 +77,7 @@ function divideIt(){
     mem.push(Number(screen.innerHTML));
     mem.push('÷');
     console.log(mem);
-    screen.innerHTML='0.00'
+    screen.innerHTML='÷'
 }
 
 
@@ -121,4 +122,11 @@ function runEm(){
 }
 
 
+//register stuff
+//get balance
+const balanceBut=document.getElementById('balance');
+balanceBut.addEventListener('click',showBalance);
+function showBalance(){
+    screen.innerHTML = 'Total Balance: '+balance
+}
 
