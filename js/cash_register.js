@@ -130,3 +130,11 @@ function showBalance(){
     screen.innerHTML = 'Total Balance: '+balance
 }
 
+
+//deposit button
+const deposit = document.getElementById('deposit');
+deposit.addEventListener('click',depositMoney);
+function depositMoney(){
+    balance+=Number(screen.innerHTML)
+    screen.innerHTML='0.00';
+}
