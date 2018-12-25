@@ -19,7 +19,10 @@ for(var i=0;i<nums.length;i++){
 function showNum(){
    
     if(screen.innerHTML==='0.00' || screen.innerHTML==='+' || screen.innerHTML==='-' || screen.innerHTML==='x' || screen.innerHTML==='÷'||
-    screen.innerHTML.charAt(0)==='T'){
+    screen.innerHTML.charAt(0)==='T' ||
+    screen.innerHTML==='ERROR'||
+    screen.innerHTML==='NaN' ||
+    screen.innerHTML==='Insufficient Funds'){
         screen.innerHTML = this.innerHTML
     }else{
         screen.innerHTML+=this.innerHTML
@@ -80,6 +83,11 @@ function divideIt(){
     screen.innerHTML='÷'
 }
 
+//decimal button
+const decimal = document.getElementById('decimal');
+decimal.addEventListener('click',showNum);
+
+
 
 
 //equals
@@ -135,6 +143,34 @@ function showBalance(){
 const deposit = document.getElementById('deposit');
 deposit.addEventListener('click',depositMoney);
 function depositMoney(){
-    balance+=Number(screen.innerHTML)
-    screen.innerHTML='0.00';
+    var money = Number(screen.innerHTML);
+    if(isNaN(money)===true){
+        screen.innerHTML='ERROR'
+    }else{
+        
+        var rounded = Math.round(100*money)/100;
+        balance+=Number(rounded);
+        screen.innerHTML='0.00';
+    }
+    
+    
 }
+
+//withdraw button
+const withdraw = document.getElementById('withdraw');
+withdraw.addEventListener('click',withdrawCash);
+function withdrawCash(){
+    var money = Number(screen.innerHTML);
+    if(money>balance){
+        screen.innerHTML='Insufficient Funds'
+    }else{
+    if(isNaN(money)===false){
+    var rounded = Math.round(100*money)/100
+    balance-=Number(rounded);
+    screen.innerHTML='0.00';
+    }else{
+        screen.innerHTML='ERROR'
+    }
+}
+}
+
