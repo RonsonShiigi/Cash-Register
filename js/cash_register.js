@@ -4,9 +4,6 @@ const tot = myCalc.total
 var optArr=[];
 var balance = 100;
 
-
-
-
 //screen
 var screen = document.getElementById('screen');
 

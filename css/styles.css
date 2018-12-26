@@ -1,0 +1,36 @@
+
+
+#topRow{
+    display:flex;
+    flex-flow: row;
+    
+}
+
+#calc{
+    background-color: aqua;
+    border-style:ridge;
+    height:325px;
+    width:300px;
+    flex-grow: 1;
+    
+    
+    
+}
+
+#cartScreen{
+    background-color:red;
+    border-style:ridge;
+    width:300px;
+    flex-grow: 1;
+    display:flex;
+    flex-flow:column;
+}
+#cart{
+    flex-grow:5;
+}
+
+
+#menu{
+    background-color: yellow;
+    border-style:ridge;
+}

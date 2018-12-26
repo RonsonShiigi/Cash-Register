@@ -5,46 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
     
 </head>
 <body>
-    <div id="screen">0.00</div>
-    <div id="row1">
-        <button class="nums">7</button>
-        <button class="nums">8</button>
-        <button class="nums">9</button>
-        <button class="opt" id="divide">÷</button>
-        <button id="clear">Clear</button>
-    </div>
+ <div id="register">
+  <div id="topRow">
+    <div id="calc">
+        <div id="screen">0.00</div>
+        <div id="row1">
+            <button class="nums">7</button>
+            <button class="nums">8</button>
+            <button class="nums">9</button>
+            <button class="opt" id="divide">÷</button>
+            <button id="clear">Clear</button>
+        </div>
 
-    <div id="row2">
-        <button class="nums">4</button>
-        <button class="nums">5</button>
-        <button class="nums">6</button>
-        <button class="opt" id="multiply">x</button>
-        <button id="balance">Get Balance</button>
-    </div>
+        <div id="row2">
+            <button class="nums">4</button>
+            <button class="nums">5</button>
+            <button class="nums">6</button>
+            <button class="opt" id="multiply">x</button>
+            <button id="balance">Get Balance</button>
+        </div>
 
-    <div id="row3">
-        <button class="nums">1</button>
-        <button class="nums">2</button>
-        <button class="nums">3</button>
-        <button class="opt" id="minus">-</button>
-        <button id="deposit">Deposit Cash</button>
-    </div>
+        <div id="row3">
+            <button class="nums">1</button>
+            <button class="nums">2</button>
+            <button class="nums">3</button>
+            <button class="opt" id="minus">-</button>
+            <button id="deposit">Deposit Cash</button>
+        </div>
 
-    <div id="row4">
-        <button class="nums">0</button>
-        <button class="nums">.00</button> 
-        <button id="decimal">.</button>
-        <button class="opt" id="add">+</button>
-        <button id="withdraw">Withdraw Cash</button>
-    </div>
-    <div id="row5">
-        <button id="equals">=</button>
+        <div id="row4">
+            <button class="nums">0</button>
+            <button class="nums">.00</button> 
+            <button id="decimal">.</button>
+            <button class="opt" id="add">+</button>
+            <button id="withdraw">Withdraw Cash</button>
+        </div>
+        <div id="row5">
+            <button id="equals">=</button>
+        </div>
     </div>
     
-    <div id="container"></div>
+    <div id="cartScreen">
+        <div id="cart">
+            a
+        </div>
+        <div id="totalPrice">
+            Total:
+        </div>
+
+        
+    </div>
+  </div>
+    <div id="menu">
+        s
+
+    </div>
+ </div>
+  
     
     
     <script src='js/calculator.js'></script>
