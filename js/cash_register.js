@@ -184,6 +184,13 @@ function shopping(){
 };
 
 //clear button
+const clearCart=document.getElementById('clearCart');
+clearCart.addEventListener('click',wash);
+function wash(){
+    cart.innerHTML="";
+    sale=0;
+    total.innerHTML='Total: '+sale;
+}
 
 
 
