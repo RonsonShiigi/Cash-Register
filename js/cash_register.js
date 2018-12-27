@@ -83,3 +83,21 @@ function withdrawCash(){
 }
 }
 
+
+//menu and cart stuff
+
+const menu = document.getElementsByClassName('menu');
+
+for(var i=0;i<menu.length;i++){
+    menu[i].addEventListener('click',shopping)
+}
+
+function shopping(){
+    console.log(this.id)
+    var cartItem = document.createElement('div');
+    cartItem.className='cartItem';
+    cartScreen.appendChild(cartItem);
+    cartScreen.innerHTML='yomama'
+    
+
+}
