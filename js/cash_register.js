@@ -3,6 +3,7 @@ var mem = [];
 const tot = 0;
 var optArr=[];
 var balance = 100;
+var sale=0;
 
 //screen
 var screen = document.getElementById('screen');
@@ -81,19 +82,28 @@ function withdrawCash(){
         screen.innerHTML='ERROR'
     }
 }
+};
+
+//Price Total button
+const priceTotal = document.getElementById('priceTotal');
+priceTotal.addEventListener('click',showPrice);
+function showPrice(){
+    screen.innerHTML=sale;
 }
 
 
 //menu and cart stuff
 
 const menu = document.getElementsByClassName('menu');
+var total = document.getElementById('total');
+total.innerHTML="Total: "+ sale;
 
 for(var i=0;i<menu.length;i++){
     menu[i].addEventListener('click',shopping)
 }
 
 function shopping(){
-    console.log(this.id)
+    
     //item box and children
    var itemBox = document.createElement('div');
    itemBox.className='itemBox'
@@ -126,9 +136,60 @@ function shopping(){
        order.innerHTML='Combo 1';
        price.innerHTML='15.00'
    }
-
-
+   //rowTwo
+   else if(this.id==='popcornMedium'){
+    order.innerHTML='Medium Popcorn';
+    price.innerHTML='7.00';
+    }else if(this.id==='drinkMedium'){
+    order.innerHTML='Medium Drink';
+    price.innerHTML='6.00   '
+    }else if(this.id==='drinkKeiki'){
+    order.innerHTML='Keiki Drink';
+    price.innerHTML='3.00';
+    }else if(this.id==='iceCream'){
+    order.innerHTML='Ice-Cream';
+    price.innerHTML='5.00';
+    }else if(this.id==='nachos'){
+    order.innerHTML='Nachos';
+    price.innerHTML='4.25';
+    }else if(this.id==='combo2'){
+    order.innerHTML='Combo 2';
+    price.innerHTML='18.00';
+    }
+    //row3
+    else if(this.id==='popcornLarge'){
+    order.innerHTML='Large Popcorn';
+    price.innerHTML='8.00';
+    }else if(this.id==='drinkLarge'){
+    order.innerHTML='Large Drink';
+    price.innerHTML='7.00';
+    }else if(this.id==='slurpee'){
+    order.innerHTML='Slurpee';
+    price.innerHTML='6.00';
+    }else if(this.id==='arare'){
+    order.innerHTML='Mochi Crunch';
+    price.innerHTML='3.75';
+    }else if(this.id==='hurricane'){
+    order.innerHTML='Hurricane Mix';
+    price.innerHTML='3.75';
+    }else if(this.id==='combo3'){
+    order.innerHTML='Combo 3';
+    price.innerHTML='20.00';
+    }
+    sale+=Number(price.innerHTML);
+    total.innerHTML="Total: "+ sale;
     
     
+    
+};
 
-}
+//clear button
+
+
+
+
+
+
+
+
+
