@@ -19,7 +19,7 @@ body{
 }
 #mainMenu{
     flex-grow:1;
-    background-color: yellow;
+    background-image: linear-gradient(rgb(12, 94, 12),rgb(99, 233, 99));
     border-style:ridge;
     display:flex;
     flex-flow:column;
@@ -39,7 +39,7 @@ body{
 } */
 /* calc stuff */
 #calc{
-    background-color: aqua;
+    background-image:linear-gradient(to left,rgb(4, 90, 4),rgb(157, 243, 157));
     border-style:ridge;
     
     width:300px;
@@ -48,10 +48,14 @@ body{
 }
 #screen{
     /* margin-top:-65px; */
-    font-size:55px;
+    font-size:65px;
     border: solid;
     border-width: 1px;
     text-align:right;
+    background-color:black;
+    color:white;
+
+
 }
 #row1{
     margin-top:1%;
@@ -84,16 +88,12 @@ body{
     font-weight: bold;
 }
 
-
-button{
-    border-radius:5px;
-}
-
-
 /* cart stuff */
 
 #cartScreen{
-    background-color:red;
+    /* background-image: linear-gradient(to left,rgb(157, 243, 157),rgb(4, 90, 4)); */
+    background-color: black;
+    color:white;
     border-style:ridge;
     width:300px;
     flex-grow: 1;
@@ -106,15 +106,30 @@ button{
     overflow:scroll;
 }
 #bottomCart{
-    font-size: 30px;
+    font-size: 40px;
     display:flex;
 }
 .itemBox{
     border:solid;
     border-width: 1px;
     height:5%;
+    display:flex;
+    flex-flow:row;
+    font-size:22px;
+}
+.order{
+    
+    text-align: center;
+    flex-grow:1;
+}
+
+#total{
+    flex-grow:1;
+    text-align: right;
     
 }
+
+
 
 
 
@@ -133,4 +148,8 @@ button{
     font-size:15px;
 }
 
+button{
+    border-radius:5px;
+    background-image:linear-gradient(to bottom right,rgb(143, 139, 139),white)
+}
 
