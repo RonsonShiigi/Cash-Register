@@ -94,10 +94,41 @@ for(var i=0;i<menu.length;i++){
 
 function shopping(){
     console.log(this.id)
-    var cartItem = document.createElement('div');
-    cartItem.className='cartItem';
-    cartScreen.appendChild(cartItem);
-    cartScreen.innerHTML='yomama'
+    //item box and children
+   var itemBox = document.createElement('div');
+   itemBox.className='itemBox'
+   var order = document.createElement('div');
+   order.className='order';
+   var price = document.createElement('div');
+   price.className='price';
+
+   cart.appendChild(itemBox);
+   itemBox.appendChild(order);
+   itemBox.appendChild(price);
+
+    //menu items...theres def a better way to do this haha but o well for now
+   if(this.id==='popcornSmall'){
+       order.innerHTML='Small Popcorn';
+       price.innerHTML='6.00'
+   }else if(this.id==='drinkSmall'){
+       order.innerHTML='Small Drink';
+       price.innerHTML='5.00'
+   }else if(this.id==='popcornKeiki'){
+       order.innerHTML='Keiki Popcorn';
+       price.innerHTML='5.00'
+   }else if(this.id==='hotdog'){
+       order.innerHTML='Hotdog';
+       price.innerHTML='3.50'
+   }else if(this.id==='candy'){
+       order.innerHTML='Box Candy';
+       price.innerHTML='3.75';
+   }else if(this.id==='combo1'){
+       order.innerHTML='Combo 1';
+       price.innerHTML='15.00'
+   }
+
+
+    
     
 
 }

@@ -99,13 +99,23 @@ button{
     flex-grow: 1;
     display:flex;
     flex-flow:column;
+
 }
 #cart{
     flex-grow:5;
+    overflow:scroll;
 }
-#totalPrice{
+#bottomCart{
     font-size: 30px;
+    display:flex;
 }
+.itemBox{
+    border:solid;
+    border-width: 1px;
+    height:5%;
+    
+}
+
 
 
 /* bottom menu stuff  */
