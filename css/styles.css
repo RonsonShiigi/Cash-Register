@@ -1,21 +1,86 @@
 
 
-#topRow{
-    display:flex;
-    flex-flow: row;
+body{
+    height:100%;
+    margin:0%;
+    padding:0;
     
 }
-
+#register{
+    display:flex;
+    flex-flow: column;
+    
+}
+#topRow{
+    flex-grow:1;
+    display:flex;
+    flex-flow: row;
+    height:50vh;
+}
+#mainMenu{
+    flex-grow:1;
+    background-color: yellow;
+    border-style:ridge;
+    display:flex;
+    flex-flow:column;
+    
+    height:50vh;
+    
+    
+   
+   
+    
+}
+/* calc stuff */
 #calc{
     background-color: aqua;
     border-style:ridge;
-    height:325px;
+    
     width:300px;
     flex-grow: 1;
+    
+}
+#screen{
+    font-size:55px;
+    border: solid;
+    border-width: 1px;
+}
+#row1{
+    margin-top:20px;
+}
+#row1, #row2, #row3, #row4, #row5{
+    display:flex;
+    flex-flow:row;
+    justify-content: center;
+    justify-content: space-evenly;
     
     
     
 }
+
+.nums, .opt{
+    font-size:25px;
+}
+.nums, .opt, .bank{
+    width:15%;
+    flex-grow:1;
+    margin:1%;
+    
+}
+.bank{
+    font-weight:bold;
+}
+#clear{
+    font-size:15px;
+    width:19%;
+    font-weight: bold;
+}
+
+
+
+
+
+/* cart stuff */
 
 #cartScreen{
     background-color:red;
@@ -30,7 +95,17 @@
 }
 
 
-#menu{
-    background-color: yellow;
-    border-style:ridge;
+/* bottom menu stuff  */
+
+#rowOne, #rowTwo, #rowThree{
+    display:flex;
+    flex-flow:row;
+    justify-content: space-evenly;
 }
+.menu{
+    height:80px;
+    width:140px;
+    font-size:15px;
+}
+
+

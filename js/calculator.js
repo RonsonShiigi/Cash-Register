@@ -1,83 +1,83 @@
-// function calculator(){
-//     function hello(){
-//         return 'hello';
-//     }
-//     return{
-//         hello: hello
-//     }
-// }
 
-var calculatorModule = function(){
-    
-    var memory = [];
-    var total=0;
-    
-    var calculator= {
-        load: function(x){
-            if(typeof x === 'number'){
-                total=x;
-                return total
-            }else{
-                throw error 
-            }
-           
-        },
-        getTotal:function(){
-            return total
-        },
-        add:function(x){
-            if(typeof x === 'number'){
-                total += x;
-                return total
-            }else{
-                throw error
-            }
-        },
-        subtract:function(x){
-            if(typeof x === 'number'){
-                total -= x;
-                return total
-            }else{
-                throw error
-            }
-        },
-        multiply:function(x){
-            if(typeof x === 'number'){
-                total *= x;
-                return total
-            }else{
-                throw error
-            }
-        },
-        divide:function(x){
-            if(typeof x === 'number'){
-                total /= x;
-                return total
-            }else if(x=0){
-                throw error
-            }
-            else{
-                throw error
-            }
-        },
-        recallMemory: function(){
-            return memory
-        },
-        saveMemory:function(x){
-            memory=total;
-            return memory;
-        },
-        clearMemory:function(){
-            memory=0;
-            return memory
-        }
-    };
-return {
-    calculator ,
-    total,
-    memory
+ //add
+
+const addBut = document.getElementById('add');
+addBut.addEventListener('click',addIt)
+function addIt(){
+  mem.push(Number(screen.innerHTML));
+  mem.push('+');
+  console.log(mem);
+  screen.innerHTML='+';  
+
 }
+
+
+//subtract
+const subtractBut = document.getElementById('minus')
+subtractBut.addEventListener('click',minusIt);
+function minusIt(){
+    mem.push(Number(screen.innerHTML));
+    mem.push('-');
+    console.log(mem);
+    screen.innerHTML='-'
+}
+
+//multiply
+const multiply = document.getElementById('multiply');
+multiply.addEventListener('click',multiplyIt);
+function multiplyIt(){
+    mem.push(Number(screen.innerHTML));
+    mem.push('x');
+    console.log(mem);
+    screen.innerHTML='x';
+
+}
+
+//divide
+const divide = document.getElementById('divide');
+divide.addEventListener('click',divideIt);
+function divideIt(){
+    mem.push(Number(screen.innerHTML));
+    mem.push('÷');
+    console.log(mem);
+    screen.innerHTML='÷'
+}
+
+//equals
+
+const equals = document.getElementById('equals');
+equals.addEventListener('click',runEm);
+
+var placeHold = 0;
+function runEm(){
+    mem.push(Number(screen.innerHTML))
+    console.log(mem)
+    if(typeof mem[0]==='number'){
+        placeHold = mem[0];
+        console.log(placeHold)
+    }else{
+        throw error
+    }
     
-    
-    
-    };
+    for(var i=0;i<mem.length;i++){
+       if(mem[i]==="+"){
+           placeHold+=mem[i+1]
+           console.log(placeHold)
+       }else if(mem[i]==="-"){
+           placeHold-=mem[i+1]
+           console.log(placeHold)
+       }else if(mem[i]==='x'){
+           placeHold*=mem[i+1]
+           console.log(placeHold)
+       }else if(mem[i]==='÷'){
+           placeHold/=mem[i+1]
+           console.log(placeHold)
+       }
+
+        
+    }
+    screen.innerHTML=placeHold;
+    mem=[];
+    placeHold=0;
+
+}
